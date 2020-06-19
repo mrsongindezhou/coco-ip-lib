@@ -95,6 +95,7 @@ func (db *CityCoCo) FindCoCo(s string) (*CocoIP, error) {
 
 	low := 0
 	mid := 0
+
 	high := len(db.data) - 1
 
 	val := binary.BigEndian.Uint32(ipv.To4())
