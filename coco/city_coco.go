@@ -1,4 +1,4 @@
-package coco_ip
+package coco
 
 import (
 	"bufio"
