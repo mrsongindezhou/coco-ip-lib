@@ -119,22 +119,20 @@ func (db *CityCoCo) FindCoCo(s string) (*CocoIP, error) {
 			high = mid - 1
 		} else if val > end {
 			low = mid + 1
-		} else {
-			return &CocoIP{
-				Start:        0,
-				End:          0,
-				Country:      "其它",
-				Province:     "其它",
-				ProvinceCode: "",
-				City:         "其它",
-				Organization: "",
-				ISP:          "",
-				CityCode:     "",
-			}, nil
 		}
 	}
 
-	return nil, ErrNotFoundCoCo
+	return &CocoIP{
+		Start:        0,
+		End:          0,
+		Country:      "其它",
+		Province:     "其它",
+		ProvinceCode: "",
+		City:         "其它",
+		Organization: "",
+		ISP:          "",
+		CityCode:     "",
+	}, nil
 }
 
 func (db *CityCoCo) FindLocationCoCo(s string) (*CocoIP, error) {
